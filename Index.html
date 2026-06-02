@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinesh</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #3e2b33;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            position: sticky;
+            top: 20px;
+            margin: 20px auto;
+            display: flex;
+            background: #3e2b33;
+            padding: 8px;
+            border-radius: 18px;
+            width: 500px;
+            z-index: 1000;
+
+            opacity: 0;
+            transform: translateY(-100px);
+            animation: homeAnimation 1s forwards;
+        }
+
+        @keyframes homeAnimation {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .navbar a {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 18px 0;
+            font-size: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #fff;
+        }
+
+        .slider {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: calc((100% - 16px) / 4);
+            height: calc(100% - 16px);
+            background: #9a6b7d;
+            border-radius: 14px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .navbar a:nth-child(1):hover~.slider {
+            transform: translateX(0%);
+            opacity: 100%;
+        }
+
+        .navbar a:nth-child(2):hover~.slider {
+            transform: translateX(100%);
+            opacity: 100%;
+        }
+
+        .navbar a:nth-child(3):hover~.slider {
+            transform: translateX(200%);
+            opacity: 100%;
+        }
+
+        .navbar a:nth-child(4):hover~.slider {
+            transform: translateX(300%);
+            opacity: 100%;
+        }
+
+        /* CONTENT */
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .headline1 {
+            font-size: 60px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .software {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .profile {
+            width: 300px;
+            border-radius: 50%;
+            margin-bottom: 40px;
+        }
+
+        .passage {
+            font-size: 22px;
+            line-height: 1.8;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        /* SECTION HEADINGS */
+
+        .skills-headline,
+        .work-headline,
+        .projects-headline,
+        .about-headline {
+            font-size: 45px;
+            margin-top: 150px;
+            margin-bottom: 80px;
+        }
+
+        /* SKILLS SECTION */
+
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 150px;
+        }
+
+        .skills-text {
+            font-size: 22px;
+            width: 500px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .skills-img {
+            width: 280px;
+            border-radius: 50%;
+        }
+
+        /* WORK SECTION */
+
+        .work-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 150px;
+        }
+
+        .work-text {
+            font-size: 22px;
+            width: 500px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .work-img {
+            width: 280px;
+            border-radius: 50%;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-link img {
+            width: 350px;
+            border-radius: 15px;
+            border: 3px solid #3e2b33;
+            transition: 0.4s;
+        }
+
+        .project-link img:hover {
+            transform: scale(1.08);
+        }
+
+        /* ABOUT */
+
+        .about-text {
+            font-size: 22px;
+            line-height: 1.8;
+            width: 80%;
+            margin: auto;
+            margin-bottom: 70px;
+        }
+
+        /* BUTTON */
+
+        .mail {
+            display: inline-block;
+            text-decoration: none;
+            background: #3e2b33;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin-bottom: 60px;
+        }
+
+        .mail:hover {
+            background: #9a6b7d;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #222;
+            color: white;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 80px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .bottom {
+            display: inline-block;
+            text-decoration: none;
+            background: #3e2b33;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .bottom:hover {
+            background: #9a6b7d;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            .navbar {
+                width: 90%;
+            }
+
+            .skills-container,
+            .work-container {
+                flex-direction: column;
+            }
+
+            .work-container {
+                flex-direction: column-reverse;
+            }
+
+            .skills-text,
+            .work-text {
+                width: 100%;
+            }
+
+            .headline1 {
+                font-size: 45px;
+            }
+
+            .skills-headline,
+            .work-headline,
+            .projects-headline,
+            .about-headline {
+                font-size: 35px;
+            }
+
+            .project-link img {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        a.dinesh {
+            text-decoration: none;
+            color: #fdd2e3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="">Resume</a>
+        <a href="tel:+918247428939">Call Me</a>
+
+        <div class="slider"></div>
+
+    </div>
+
+    <div class="content" id="home">
+
+        <h1 class="headline1">I'm Dinesh</h1>
+
+        <p class="software">A Web Developer</p>
+
+        <img class="profile" src="images/Profile.jpeg" alt="Profile">
+
+        <p class="passage">
+            I am a web developer/designer with experience in various programming languages and tools.
+        </p>
+
+        <p class="passage">
+            3rd Year ECE Student.
+        </p>
+
+        <h2 class="skills-headline">My Skills</h2>
+
+        <div class="skills-container">
+
+            <div class="skills-text">
+                HTML, CSS, JavaScript, C++, Java,
+                Python, React, Node.js, MongoDB,
+                MySQL, Problem Solving.
+            </div>
+
+            <img class="skills-img" src="images/skills.jpeg" alt="Skills">
+
+        </div>
+
+        <h2 class="work-headline">What Can I Do ??</h2>
+
+        <div class="work-container">
+
+            <img class="work-img" src="images/do.jpeg" alt="Work">
+
+            <div class="work-text">
+                I'm a developer. So, I can help you build scalable web applications to run across devices using modern
+                technologies available.
+            </div>
+
+        </div>
+
+        <h2 class="projects-headline">Projects</h2>
+
+        <div class="projects">
+
+            <a class="project-link" href="">
+                <img src="images/Profile.jpeg" alt="Project 1">
+            </a>
+
+            <a class="project-link" href="">
+                <img src="images/Profile.jpeg" alt="Project 2">
+            </a>
+
+        </div>
+
+        <h2 class="about-headline" id="about">About Me :&#41</h2>
+
+        <div class="skills-container">
+
+            <p class="skills-text">
+                I focused on Data Structures & Algorithms, and building modern, user-friendly applications.
+                I'm ideally looking for developer role.
+            </p>
+            <img class="skills-img" src="images/hire me.jpeg" alt="skills">
+
+        </div>
+
+        <a class="mail" href="mailto:dineshtelegrapu@gmail.com">
+            Send Message
+        </a>
+
+        <footer>
+
+            <div class="footer-links">
+
+                <a class="bottom" href="https://www.instagram.com/sunnylokii?igsh=MTE4anF2OHQ0bm4xdQ==">
+                    Instagram
+                </a>
+
+                <a class="bottom" href="https://www.linkedin.com/in/telegrapu-dinesh-21957340b">
+                    LinkedIn
+                </a>
+
+                <a class="bottom" href="https://github.com/dineshtelegrapu">
+                    GitHub
+                </a>
+
+            </div>
+
+            <p>© 2026 <a class="dinesh" , href="">Telegrapu Dinesh</a> | All Rights Reserved</p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
