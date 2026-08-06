@@ -34,5 +34,5 @@ Contact
 - GitHub: https://github.com/dineshtelegrapu
 - LinkedIn: https://www.linkedin.com/in/telegrapu-dinesh-21957340b?utm_source=share_via&utm_content=profile&utm_medium=member_android
 - Email:
-
+dineshtelegrapu@gmail.con
 Thank you for visiting my portfolio!
